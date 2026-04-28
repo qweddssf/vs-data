@@ -1,0 +1,28 @@
+#####
+name: Gan
+reg: True    # With or without registration network
+port: 6019   #  port parameters
+save_root: './output/multi-organ/Liver/'
+image_save: './output/multi-organ/Liver/images'
+
+# lamda weight
+Seg_lamda: 1  # 分割一致损失
+Adv_lamda: 1  # 对抗损失  系数
+Corr_lamda: 100  # Correction loss   图像的转化损失
+Smooth_lamda: 10  # 形变场的损失  系数
+
+
+epoch: 0        # starting epoch
+n_epochs: 150     # How often do you want to display output images during training
+batchSize: 4        # size of the batches
+batchSize_val: 1           # size of the validation batches
+dataRoot: 'dataset/multi-organ/train/Liver'     # root directory of the dataset
+val_dataRoot: 'dataset/multi-organ/test/Liver'  #  未染色文件夹名为  unstained  染色 stained
+lr: 0.00002                # initial learning rate 0.0002
+decay_epoch: 10            # epoch to start linearly decaying the learning rate to 0
+size: 512
+val_size: 512
+input_nc: 3
+output_nc: 3
+cuda: True                
+n_cpu: 0

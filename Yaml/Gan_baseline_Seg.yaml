@@ -1,0 +1,29 @@
+#####
+name: Gan  # Generator
+reg: True    # With or without registration network
+seg: True   # With or without segmentation network
+port: 6019   #  port parameters
+save_root: './output/tissue_name/with_R_S/exp'  # output dir
+image_save: './output/tissue_name/with_R_S/exp/images' # image save dir
+
+# lamda weight
+Seg_lamda: 1  # Seg loss
+Adv_lamda: 1  # adv loss
+Corr_lamda: 100  # transformation loss
+Smooth_lamda: 10  # DVF loss
+
+
+epoch: 0        # starting number of epoch
+n_epochs: 40      # total epochs
+batchSize: 8         # size of the training batches
+batchSize_val: 1           # size of the validation batches
+dataRoot: 'dataset/train/sample_22/'     #  directory of the training dataset
+val_dataRoot: 'dataset/val/stomach_tissue/2048/sample_24_tmp/'  #   directory of the val dataset
+lr: 0.0002                   # initial learning rate 0.0002
+decay_epoch: 10            # epoch to start linearly decaying the learning rate to 0
+size: 512                # resolution of training dataset
+val_size: 2048              # resolution of val dataset
+input_nc: 3                 # input channel
+output_nc: 3                # output channel
+cuda: True                
+n_cpu: 0

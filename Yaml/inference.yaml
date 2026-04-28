@@ -1,0 +1,17 @@
+#####
+exp_name: '28'   # exp id
+tissue_sec: 'stomach'  # tissue  name
+weight_path: './output/tissue_sec/tissue_sec_epoch=48_weight/'    # path to weight
+save_root: './output/inference/tissue_sec/'       #  save dir
+val_dataset_root: 'dataset/tissue_sec/val/'  # val dataset dir
+
+batchSize_val: 1   # batch size
+best_epochs: [48]  # list of weight,e.g. epoch=48_weight
+val_size: 2048
+input_nc: 3  # input channel
+output_nc: 3  # output channel
+cuda: True
+n_cpu: 1
+base_eval: True
+nuclei_eval: False
+
